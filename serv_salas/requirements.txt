@@ -1,0 +1,8 @@
+flask
+flask-mysqldb
+flask-WTF
+wtforms
+passlib
+requests
+flask_restful
+flask_httpauth

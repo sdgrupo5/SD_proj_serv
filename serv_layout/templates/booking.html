@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h2>Reserva</h2>
+   <table class="table">
+      <thead class="thead-dark">
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">Salas</th>
+            <th scope="col">Capacidade</th>
+            <th scope="col">Reserva</th>
+         </tr>
+      </thead>
+      <tbody>
+      {% for msg in msg_api %}
+          <tr>
+             <th scope="row">{{ msg.id }}</th>
+             <td>{{ msg.nome }}</td>
+             <td>{{ msg.capacidade }}</td>
+             <td>
+                {% if msg.reserva == 1 %}
+                   <form method='POST' action="">
+                      <button name="reserva" type="submit" class="btn btn-success" value={{ msg.nome }}>Com reserva</button>
+                   </form>
+                {% else %}
+                   <form method='POST' action="">
+                      <button name="reserva" type="submit" class="btn btn-primary" value={{ msg.nome }}>Reservar</button>
+                   </form>
+                {% endif %}
+             </td>
+         </tr>
+      {% endfor %}
+      </tbody>
+   </table>
+{% endblock %}

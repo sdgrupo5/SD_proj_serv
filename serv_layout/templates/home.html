@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+          <h2>Projecto Microservices</h2>
+          <h3>Classroom Booking App</h3>
+          <p class="lead">Projeto efetuado na disciplina de Sistemas Distribuídos. Os serviços a funcionar com 2 Raspberry Pi em docker, um manager e um worker, com diversas replicas. Os serviços encontram-se implementados em python, flask e mysql. Utilizado métodos http, REST APIs, MQ, request de dados, redirecionamento, respostas, sessões e autenticações.</p>
+          {% if session.logged_in %}
+             <p>Bem-vindo: {{ session["username"] }}</p>
+          {% else %}
+             <p><a class="btn btn-lg btn-success" href="/login" role="button">Fazer login</a></p>
+          {% endif %}
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Serviço de Autenticação</h2>
+            <p>O Serviço de autenticação permite fazer o registo de utilizadores para uma base de dados em mysql através de uma comunicação REST API e fazer a respectiva validação de autenticação (login).</p>
+            <p><a class="btn btn-primary" href="/registo" role="button">Experimentar &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Serviço de Reserva</h2>
+            <p>O serviço de booking proporciona por intermédio de uma base de dados, por comunicação REST API e atualização de um booleano fazer as reservas.</p>
+            <p><a class="btn btn-primary" href="/booking" role="button">Experimentar &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Serviço de Horário</h2>
+            <p>O serviço de horário permite adicionar datas e horas a uma base de dados. Cada sala pode ter vários horas no mesmo dia e vários dias com a mesma hora.</p>
+            <p><a class="btn btn-primary" href="/horariomain" role="button">Experimentar &raquo;</a></p>
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h1>Registo</h1>
+   {% from "includes/formhelpers.html" import render_field %}
+   <form method='POST' action="">
+      <div class="form-group">
+         {{render_field(form.nomein, class="form-control")}}
+      </div>
+      <div class="form-group">
+         {{render_field(form.emailin, class="form-control")}}
+      </div>
+      <div class="form-group">
+         {{render_field(form.usernamein, class="form-control")}}                                                                                          </div>
+      <div class="form-group">
+         {{render_field(form.passwordin, class="form-control")}}                                                                                          </div>
+      <div class="form-group">
+         {{render_field(form.confirmin, class="form-control")}}                                                                                          </div>
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+   </form>
+{% endblock %}

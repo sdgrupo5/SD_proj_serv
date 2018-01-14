@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>Services</h1>
+        <p>&nbsp;</p>
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Serviço de Autenticação</h2>
+            <p>O Serviço de autenticação permite fazer o registo de utilizadores para uma base de dados em mysql através de uma comunicação REST API e fazer a respectiva validação de autenticação (login).</p>
+            <p><a class="btn btn-primary" href="/registo" role="button">Experimentar &raquo;</a></p>
+          </div>
+          <div class="col-lg-12">
+            <h2>Serviço de Reserva</h2>
+            <p>O serviço de reserva proporciona por intermédio de uma base de dados, por comunicação REST API e atualização de um booleano fazer as reservas.</p>
+            <p><a class="btn btn-primary" href="/booking" role="button">Experimentar &raquo;</a></p>
+          </div>
+          <div class="col-lg-12"> 
+          <h2>Serviço de Horário</h2>
+            <p>O serviço de horário permite adicionar datas e horas a uma base de dados. Cada sala pode ter vários horas no mesmo dia e vários dias com a mesma hora.</p>
+            <p><a class="btn btn-primary" href="/horariomain" role="button">Experimentar &raquo;</a></p>
+          </div>
+          <div class="col-lg-12">
+          <h2>Serviço de Pedidos</h2>
+            <p>O serviço concede ao utilizador enviar uma mensagem para efectuar pedidos ou reclamações. A mensagem é enviada por intermédio do rabbitMQ e guardada num ficheiro de texto.</p>
+            <p><a class="btn btn-primary" href="/pedidos" role="button">Experimentar &raquo;</a></p>
+          </div> 
+          <div class="col-lg-12">
+            <h2>Aplicação</h2>
+            <p>Aplicação possibilita a comunicação e interação entre os serviços, uma interface entre serviços. Implementado em Flask, microframework para python, com um layout em Bootstrap. </p>
+            <p><a class="btn btn-primary" href="/" role="button">Experimentar &raquo;</a></p>
+          </div>
+        </div>
+
+{% endblock %}
+

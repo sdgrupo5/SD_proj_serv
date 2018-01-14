@@ -1,0 +1,19 @@
+version: "3"
+services:
+  serv5:
+    # replace username/repo:tag with your name and image details
+    image: sd_pedidos
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    networks:
+      - webnet5
+    volumes:
+      - /home/pi/container/sd_proj_ip:/etc/sd_proj_ip
+networks:
+  webnet5:

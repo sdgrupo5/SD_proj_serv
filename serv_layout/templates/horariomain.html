@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h2>Horário</h2>
+   <table class="table">
+      <thead class="thead-dark">
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">Salas</th>
+            <th scope="col">Capacidade</th>
+            <th scope="col">Horário</th>
+         </tr>
+      </thead>
+      <tbody>
+      {% for msg in msg_api %}
+          <tr>
+             <th scope="row">{{ msg.id }}</th>
+             <td>{{ msg.nome }}</td>
+             <td>{{ msg.capacidade }}</td>
+             <td>
+                {% if msg.reserva == 1 %}
+                   <form action="/horario/{{ msg.nome }}">
+                      <button type="submit"  class="btn btn-primary">Ver detalhes</button>
+                   </form>
+                {% endif %}
+             </td>
+         </tr>
+      {% endfor %}
+      </tbody>
+   </table>
+{% endblock %}

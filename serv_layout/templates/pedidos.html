@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h1>Pedidos do Utilizador</h1>
+   <p>Fazer pedidos especiais, reclamações ou informações:</p>
+    <form method='POST' action="">
+      <div class="form-group">
+         <input type="text" name="userpedido" class="form-control" value={{request.form.userpedido}}>
+      </div>
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+   </form>
+{% endblock %}

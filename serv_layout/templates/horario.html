@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h1>{{ nome }}</h1>
+   <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#FazerRegisto" aria-expanded="false" aria-controls="FazerRegisto">
+    Reservar Sala
+   </button>
+   </p>
+   <div class="collapse" id="FazerRegisto">
+      <div class="card card-body">
+   {% from "includes/formhelpers.html" import render_field %}
+   <form method='POST' action="">
+      <div class="form-group">
+         {{render_field(form.reservadiain, class="form-control")}}
+      </div>
+      <div class="form-group">
+         {{render_field(form.horainiin, class="form-control")}}
+      </div>
+      <div class="form-group">
+         {{render_field(form.horaendin, class="form-control")}}                        </div>
+      <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+   </form>
+
+      </div>
+   </div>
+   <p>&nbsp;</p>
+   <table class="table">
+      <thead class="thead-dark">
+         <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dias reservados</th>
+            <th scope="col">Hora início</th>
+            <th scope="col">Hora fim</th>
+         </tr>
+      </thead>
+      <tbody>
+      {% for msg in msg_api %}
+          <tr>
+             <th scope="row">{{ loop.index }}</th>
+             <td>{{ msg.reservadia }}</td>
+             <td>{{ msg.horaini }}</td>
+             <td>{{ msg.horaend }}</td>
+         </tr>
+      {% endfor %}
+      </tbody>
+   </table> 
+{% endblock %}
+
